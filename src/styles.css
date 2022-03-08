@@ -1,1 +1,14 @@
-/* You can add global styles to this file, and also import other style files */
+html, body {
+  padding: 0;
+  margin: 0;
+}
+
+@font-face {
+  font-family: gilroy-bold;
+  src: url(src/assets/fonts/gilroy/Gilroy-Bold.ttf) format("opentype");
+}
+
+@font-face {
+  font-family: gilroy-regular;
+  src: url(src/assets/fonts/gilroy/Gilroy-Regular.ttf) format("opentype");
+}
