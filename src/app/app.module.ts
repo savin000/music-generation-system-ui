@@ -8,7 +8,6 @@ import { RegistrationFormComponent } from './login/registration-form/registratio
 import {RouterModule} from "@angular/router";
 import {AppRoutingModule} from "./app-routing.module";
 import { HomeComponent } from './home/home.component';
-import { PlayerComponent } from './home/player/player.component';
 import { CalendarComponent } from './home/calendar/calendar.component';
 import { AboutComponent } from './home/about/about.component';
 import { MusicPlayerComponent } from './home/music-player/music-player.component';
@@ -20,7 +19,6 @@ import { MusicPlayerComponent } from './home/music-player/music-player.component
     LoginFormComponent,
     RegistrationFormComponent,
     HomeComponent,
-    PlayerComponent,
     CalendarComponent,
     AboutComponent,
     MusicPlayerComponent
