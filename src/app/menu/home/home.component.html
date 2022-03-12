@@ -1,0 +1,54 @@
+<div class="home">
+  <form class="heart-rate-chart-form">
+    <div class="form-header">
+      <h2 class="heart-rate-chart-header">
+        Heart rate
+      </h2>
+
+      <h2 class="mean-bpm">
+        {{meanBpmValue}} bpm
+      </h2>
+    </div>
+
+    <div class="heart-rate-chart">
+      <canvas
+        baseChart
+        [datasets]="heartRateChartData"
+        [labels]="heartRateChartLabels"
+        [options]="heartRateChartOptions"
+        [legend]="heartRateChartLegendVisible"
+        [type]="'line'">
+      </canvas>
+    </div>
+
+  </form>
+
+  <div class="right-side">
+    <form class="device-form">
+      <h2 class="device-form-header">
+        Connected device
+      </h2>
+
+      <h4 class="connected-device-header">
+        <img src="assets/icons/watch_light.svg" alt="watch-logo" class="watch-logo">
+        {{ connectedDeviceName }}
+      </h4>
+
+      <button
+        class="change-device-button"
+        type="button"
+      >
+        Change device
+      </button>
+    </form>
+
+    <form class="music-player-form">
+      <button
+        class="start-music-button"
+        type="button"
+      >
+        Start music
+      </button>
+    </form>
+  </div>
+</div>
