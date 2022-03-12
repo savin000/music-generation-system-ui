@@ -1,0 +1,88 @@
+<div class="menu">
+  <form class="menu-form">
+    <div class="profile">
+      <button
+        class="profile-button"
+        type="button"
+      >
+      </button>
+    </div>
+
+    <button
+      *ngIf="!homeTabIsSelected; else selectedHomeButton"
+      class="menu-button home-button"
+      type="button"
+      (click)="openHomeTab()"
+    ></button>
+    <ng-template
+      #selectedHomeButton
+    >
+      <button
+        class="menu-button selected-home-button"
+        type="button"
+      ></button>
+    </ng-template>
+
+    <button
+      *ngIf="!calendarTabIsSelected; else selectedCalendarButton"
+      class="menu-button calendar-button"
+      type="button"
+      (click)="openCalendarTab()"
+    >
+    </button>
+    <ng-template
+      #selectedCalendarButton
+    >
+      <button
+        class="menu-button selected-calendar-button"
+        type="button"
+      ></button>
+    </ng-template>
+
+    <button
+      *ngIf="!aboutTabIsSelected; else selectedAboutButton"
+      class="menu-button about-button"
+      type="button"
+      (click)="openAboutTab()"
+    >
+    </button>
+    <ng-template
+      #selectedAboutButton
+    >
+      <button
+        class="menu-button selected-about-button"
+        type="button"
+      ></button>
+    </ng-template>
+
+    <button
+      *ngIf="!settingsTabIsSelected; else selectedSettingsButton"
+      class="menu-button settings-button"
+      type="button"
+      (click)="openSettingsTab()"
+    >
+    </button>
+    <ng-template
+      #selectedSettingsButton
+    >
+      <button
+        class="menu-button selected-settings-button"
+        type="button"
+      ></button>
+    </ng-template>
+
+    <button
+      class="menu-button log-out-button"
+      type="button"
+      (click)="logOut()"
+    >
+    </button>
+  </form>
+
+  <div class="current-tab">
+    <app-home *ngIf="homeTabIsSelected"></app-home>
+    <app-calendar *ngIf="calendarTabIsSelected"></app-calendar>
+    <app-about *ngIf="aboutTabIsSelected"></app-about>
+    <app-settings *ngIf="settingsTabIsSelected"></app-settings>
+  </div>
+</div>

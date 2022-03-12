@@ -1,0 +1,103 @@
+.menu {
+  background-color: #F9FBFD;
+
+  .menu-form {
+    float: left;
+    margin-left: 32px;
+    margin-right: 32px;
+
+    .profile {
+      padding-left: 20px;
+      padding-top: 48px;
+      padding-bottom: 36px;
+
+      .profile-button {
+        height: 56px;
+        width: 56px;
+        outline: none;
+        box-shadow: none;
+        border: none;
+        background-color: #F9FBFD;
+        background-image: url("src/assets/icons/logo.svg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+    }
+
+    .menu-button {
+      display: block;
+      height: 96px;
+      width: 96px;
+      outline: none;
+      box-shadow: none;
+      border: none;
+      background-color: #F9FBFD;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    .home-button {
+      background-image: url("src/assets/icons/house-white.svg");
+
+      &:active {
+        background-image: url("src/assets/icons/house-blue.svg");
+      }
+    }
+
+    .selected-home-button {
+      background-image: url("src/assets/icons/house-blue.svg");
+    }
+
+    .calendar-button {
+      background-image: url("src/assets/icons/calendar-white.svg");
+
+      &:active {
+        background-image: url("src/assets/icons/calendar-blue.svg");
+      }
+    }
+
+    .selected-calendar-button {
+      background-image: url("src/assets/icons/calendar-blue.svg");
+    }
+
+    .about-button {
+      background-image: url("src/assets/icons/question-white.svg");
+
+      &:active {
+        background-image: url("src/assets/icons/question-blue.svg");
+      }
+    }
+
+    .selected-about-button {
+      background-image: url("src/assets/icons/question-blue.svg");
+    }
+
+    .settings-button {
+      background-image: url("src/assets/icons/settings-white.svg");
+
+      &:active {
+        background-image: url("src/assets/icons/settings-blue.svg");
+      }
+    }
+
+    .selected-settings-button {
+      background-image: url("src/assets/icons/settings-blue.svg");
+    }
+
+    .log-out-button {
+      position: absolute;
+      bottom: 10px;
+      background-image: url("src/assets/icons/log_out-white.svg");
+
+      &:active {
+        background-image: url("src/assets/icons/log_out-blue.svg");
+      }
+    }
+  }
+
+  .current-tab {
+    float: left;
+  }
+}
