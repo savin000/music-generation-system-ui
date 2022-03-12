@@ -1,4 +1,5 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-login-form',
@@ -8,17 +9,16 @@ import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 export class LoginFormComponent implements OnInit {
   @Output() signUpButtonClick: EventEmitter<boolean> = new EventEmitter();
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
 
   logInButtonClicked() {
-
+    this.router.navigate(['home']);
   }
 
   signUpButtonClicked() {
     this.signUpButtonClick.emit(true)
   }
-
 }
