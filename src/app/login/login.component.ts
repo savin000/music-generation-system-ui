@@ -18,4 +18,7 @@ export class LoginComponent implements OnInit {
     this.isRegistrationFormVisible = clicked;
   }
 
+  closeRegistrationForm() {
+    this.isRegistrationFormVisible = false;
+  }
 }

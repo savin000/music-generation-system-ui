@@ -24,4 +24,5 @@
 <app-registration-form
   *ngIf="isRegistrationFormVisible"
   class="app-registration-form"
+  (outsideClick)="closeRegistrationForm()"
 ></app-registration-form>

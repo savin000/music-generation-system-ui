@@ -13,6 +13,7 @@ import { AboutComponent } from './menu/about/about.component';
 import { HomeComponent } from './menu/home/home.component';
 import { SettingsComponent } from './menu/settings/settings.component';
 import {NgChartsModule} from "ng2-charts";
+import { OutsideClickDirective } from './directives/outside-click.directive';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import {NgChartsModule} from "ng2-charts";
     CalendarComponent,
     AboutComponent,
     HomeComponent,
-    SettingsComponent
+    SettingsComponent,
+    OutsideClickDirective
   ],
   imports: [
     BrowserModule,
