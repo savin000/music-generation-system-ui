@@ -9,6 +9,7 @@ export class HomeComponent implements OnInit {
 
   connectedDeviceName: string = "";
   meanBpmValue: number = 160;
+  isMusicPlaying: boolean = false;
 
   constructor() { }
 
@@ -35,6 +36,10 @@ export class HomeComponent implements OnInit {
   public heartRateChartPlugins = [];
 
   ngOnInit(): void {
-    this.connectedDeviceName = "Apple Watch Series 7"
+    this.connectedDeviceName = "Apple Watch Series 7";
+  }
+
+  musicPlayerButtonClicked() {
+    this.isMusicPlaying = !this.isMusicPlaying;
   }
 }

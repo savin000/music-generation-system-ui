@@ -44,10 +44,11 @@
 
     <form class="music-player-form">
       <button
-        class="start-music-button"
+        class="music-player-button"
         type="button"
+        (click)="musicPlayerButtonClicked()"
       >
-        Start music
+        {{ isMusicPlaying == false ? 'Start music' : 'Stop music' }}
       </button>
     </form>
   </div>
