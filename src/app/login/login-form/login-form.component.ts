@@ -2,23 +2,24 @@ import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {Router} from "@angular/router";
 
 @Component({
-  selector: 'app-login-form',
-  templateUrl: './login-form.component.html',
-  styleUrls: ['./login-form.component.less']
+    selector: 'app-login-form',
+    templateUrl: './login-form.component.html',
+    styleUrls: ['./login-form.component.less']
 })
 export class LoginFormComponent implements OnInit {
-  @Output() signUpButtonClick: EventEmitter<boolean> = new EventEmitter();
+    @Output() signUpButtonClick: EventEmitter<boolean> = new EventEmitter();
 
-  constructor(private router: Router) { }
+    constructor(private router: Router) {
+    }
 
-  ngOnInit(): void {
-  }
+    ngOnInit(): void {
+    }
 
-  logInButtonClicked() {
-    this.router.navigate(['home']);
-  }
+    logInButtonClicked() {
+        this.router.navigate(['home']);
+    }
 
-  signUpButtonClicked() {
-    this.signUpButtonClick.emit(true)
-  }
+    signUpButtonClicked() {
+        this.signUpButtonClick.emit(true)
+    }
 }
