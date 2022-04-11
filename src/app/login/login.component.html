@@ -1,28 +1,29 @@
 <div
-  class="login-page-background"
-  [style.background-image]="'url(assets/login_background.png)'"
+    class="login-page-background"
+    [style.background-image]="'url(assets/login_background.png)'"
 >
-  <div class="login-page-info">
-    <h1 class="login-page-title">
-      Music <br/> generation <br/> system
-    </h1>
+    <div class="login-page-info">
+        <h1 class="login-page-title">
+            Music <br/> generation <br/> system
+        </h1>
 
-    <h3 class="login-page-description">
-      Real-time music generation system that helps to regulate the intensity of physical activity depending on your
-      heartbeat
-    </h3>
-  </div>
+        <h3 class="login-page-description">
+            Real-time music generation system that helps to regulate the intensity of physical activity depending on
+            your
+            heartbeat
+        </h3>
+    </div>
 
-  <app-login-form
-    class="app-login-form"
-    (signUpButtonClick)="isSignUpButtonClicked($event)"
-  ></app-login-form>
+    <app-login-form
+        class="app-login-form"
+        (signUpButtonClick)="isSignUpButtonClicked($event)"
+    ></app-login-form>
 </div>
 
 <div [ngClass]="{'fogged': isRegistrationFormVisible}"></div>
 
 <app-registration-form
-  *ngIf="isRegistrationFormVisible"
-  class="app-registration-form"
-  (outsideClick)="closeRegistrationForm()"
+    *ngIf="isRegistrationFormVisible"
+    class="app-registration-form"
+    (outsideClick)="closeRegistrationForm()"
 ></app-registration-form>

@@ -9,17 +9,15 @@ import {TrackerDataService} from "../../services/tracker-data.service";
 export class HomeComponent implements OnInit {
 
     connectedDeviceName: string = "";
-    meanBpmValue: number = 160;
+    meanBpmValue: number = 0;
     isMusicPlaying: boolean = false;
     audio = new Audio();
 
     constructor(private trackerDataService: TrackerDataService) {
     }
 
-    public heartRateChartData = [
-        {data: [65, 59, 80, 81, 56, 55, 40]},
-    ];
-    public heartRateChartLabels = ['15:10', '15:11', '15:12', '15:13', '15:15'];
+    public heartRateChartData: any = [];
+    public heartRateChartLabels: any[] = [];
     public heartRateChartOptions = {
         responsive: true,
 
@@ -36,23 +34,38 @@ export class HomeComponent implements OnInit {
         pointRadius: 7,
     };
     public heartRateChartLegendVisible = false;
-    public heartRateChartPlugins = [];
 
     ngOnInit(): void {
+        const average = (list: number[]) => list.reduce((a: number, b: number) => a + b, 0) / list.length;
+
         this.connectedDeviceName = "Apple Watch Series 7";
         this.audio.src = "../../../assets/sample4.wav"
         this.audio.load();
 
         this.trackerDataService.getSimulatedTrackerData().subscribe(trackerData => {
             let heartRate: number[] = []
+
             trackerData.data.forEach(record => {
-                this.heartRateChartLabels.push(record.hour + ':' + record.minutes)
+                let date: Date = new Date();
+                date.setHours(record.hour);
+                date.setMinutes(record.minutes);
+                let options: Intl.DateTimeFormatOptions = {
+                    hour: '2-digit',
+                    minute:'2-digit',
+                    hour12: false,
+                };
+                let timestamp = date.toLocaleTimeString(navigator.language, options);
+                this.heartRateChartLabels.push(timestamp);
+
                 heartRate.push(record.bpm)
             })
 
+            this.heartRateChartData = [
+                { data: heartRate },
+            ];
+
+            this.meanBpmValue = Math.round(average(heartRate));
         });
-
-
     }
 
     musicPlayerButtonClicked() {
